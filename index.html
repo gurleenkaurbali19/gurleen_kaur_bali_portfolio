@@ -7,9 +7,17 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    html { scroll-behavior: smooth; }
-
-    /* Typing Effect (used in Hero only) */
+    html, body {
+      max-width: 100vw;
+      overflow-x: hidden !important;
+      scroll-behavior: smooth;
+    }
+    img, video {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    /* Typing Effect */
     .typing {
       overflow: hidden;
       border-right: 2px solid #facc15;
@@ -18,8 +26,6 @@
     }
     @keyframes typing { from { width: 0; } to { width: 100%; } }
     @keyframes blink-caret { 50% { border-color: transparent; } }
-
-    /* Glow button */
     .glow-button {
       background: linear-gradient(90deg, #facc15, #ffe066 75%);
       color: #222;
@@ -33,13 +39,11 @@
       transform: scale(1.08);
       box-shadow: 0 0 32px #facc15, 0 0 8px #ffe066;
     }
-
-    /* Consistent dynamic background: animated noise overlay */
     body {
       position: relative;
-      background: #080808; /* pure deep black fallback */
+      background: #080808;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow-x: hidden !important;
     }
     .noise-bg {
       pointer-events: none;
@@ -55,43 +59,43 @@
       0% { background-position: 0 0; }
       100% { background-position: 1000px 1000px; }
     }
-    
-  .skill-hover {
-    transition: transform 0.15s cubic-bezier(.4,0,.2,1), box-shadow 0.15s cubic-bezier(.4,0,.2,1), background 0.15s cubic-bezier(.4,0,.2,1);
-  }
-  .skill-hover:hover {
-    transform: scale(1.12);
-    box-shadow: 0 8px 28px -10px #facc15, 0 2px 8px -2px #ffe066;
-    background: #ffd700;
-    color: #000;
-    z-index: 1;
-  }
-
-
-
-    /* Image styling for project screenshots */
+    .skill-hover {
+      transition: transform 0.15s cubic-bezier(.4,0,.2,1), box-shadow 0.15s cubic-bezier(.4,0,.2,1), background 0.15s cubic-bezier(.4,0,.2,1);
+    }
+    .skill-hover:hover {
+      transform: scale(1.12);
+      box-shadow: 0 8px 28px -10px #facc15, 0 2px 8px -2px #ffe066;
+      background: #ffd700;
+      color: #000;
+      z-index: 1;
+    }
     .project-img {
-      border-radius: 0.5rem; /* rounded-lg */
-      margin-bottom: 1rem; /* mb-4 */
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      width: 100%;
       max-width: 100%;
       height: auto;
       box-shadow: 0 10px 15px -3px rgb(250 204 21 / 0.5), 0 4px 6px -4px rgb(250 204 21 / 0.5);
+      display: block;
+    }
+    /* Prevent unwanted horizontal scroll for deep children */
+    * {
+      box-sizing: border-box;
+      min-width: 0;
     }
   </style>
 </head>
 <body class="bg-black text-yellow-50 font-sans">
 
-  <!-- Subtle grainy, moving background overlay -->
   <div class="noise-bg"></div>
 
   <!-- Hero Section -->
-<section class="min-h-screen flex flex-col items-center justify-center text-center py-24 px-4 sm:px-8">
-
+  <section class="min-h-screen flex flex-col items-center justify-center text-center py-12 sm:py-24 px-2 sm:px-8">
     <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 typing text-yellow-400" data-aos="fade-down">Hi, I’m Gurleen Kaur Bali 👋</h1>
     <p class="text-lg sm:text-xl max-w-2xl mb-8 text-yellow-100" data-aos="fade-up" data-aos-delay="100">
       A passionate Data Analyst, AI Explorer, and Developer with a creative mind and a love for building impactful projects.
     </p>
-    <div class="flex flex-col sm:flex-row gap-6" data-aos="zoom-in" data-aos-delay="260">
+    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6" data-aos="zoom-in" data-aos-delay="260">
       <a href="mailto:gurleenkaurbali20@gmail.com" class="glow-button">📧 Email</a>
       <a href="https://www.linkedin.com/in/gurleen-kaur-bali-4b24b1252/" target="_blank" class="glow-button">🔗 LinkedIn</a>
       <a href="https://github.com/gurleenkaurbali19" target="_blank" class="glow-button">💻 GitHub</a>
@@ -99,248 +103,221 @@
   </section>
 
   <!-- About Me -->
-  <section class="py-24 px-4 sm:px-8 text-center">
+  <section class="py-12 sm:py-24 px-2 sm:px-8 text-center">
     <h2 class="text-4xl font-bold mb-8 text-yellow-400" data-aos="fade-up">About Me</h2>
     <p class="max-w-3xl mx-auto text-xl mb-12 text-yellow-100" data-aos="fade-up" data-aos-delay="100">
       I'm a passionate developer with hands-on experience in machine learning, web development, and natural language processing. I’m proficient with tools like Hugging Face, Tableau, and Django, and I've built smart chatbots, dashboards, and apps.
     </p>
     <h3 class="text-2xl font-semibold mb-6 text-yellow-200" data-aos="fade-right">Technical Skills</h3>
-    <div class="flex flex-wrap justify-center gap-4 text-base max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="120">
-  <span class="skill-hover bg-yellow-100 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Python</span>
-  <span class="skill-hover bg-yellow-200 text-black px-5 py-2 rounded-full font-medium cursor-pointer">C</span>
-  <span class="skill-hover bg-yellow-300 text-black px-5 py-2 rounded-full font-medium cursor-pointer">C++</span>
-  <span class="skill-hover bg-yellow-400 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Machine Learning</span>
-  <span class="skill-hover bg-yellow-500 text-black px-5 py-2 rounded-full font-medium cursor-pointer">NLP</span>
-  <span class="skill-hover bg-yellow-600 text-black px-5 py-2 rounded-full font-medium cursor-pointer">AI</span>
-  <span class="skill-hover bg-yellow-700 text-yellow-50 px-5 py-2 rounded-full font-medium cursor-pointer">LangChain</span>
-  <span class="skill-hover bg-yellow-800 text-yellow-50 px-5 py-2 rounded-full font-medium cursor-pointer">Transformers</span>
-  <span class="skill-hover bg-gray-700 text-yellow-100 px-5 py-2 rounded-full font-medium cursor-pointer">Software Engineering</span>
-  <span class="skill-hover bg-gray-600 text-yellow-100 px-5 py-2 rounded-full font-medium cursor-pointer">Tableau</span>
-  <span class="skill-hover bg-white text-black px-5 py-2 rounded-full font-medium cursor-pointer">Power BI</span>
-  <span class="skill-hover bg-yellow-200 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Excel</span>
-  <span class="skill-hover bg-yellow-300 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Hugging Face</span>
-</div>
-
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-4 text-base max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="120">
+      <span class="skill-hover bg-yellow-100 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Python</span>
+      <span class="skill-hover bg-yellow-200 text-black px-5 py-2 rounded-full font-medium cursor-pointer">C</span>
+      <span class="skill-hover bg-yellow-300 text-black px-5 py-2 rounded-full font-medium cursor-pointer">C++</span>
+      <span class="skill-hover bg-yellow-400 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Machine Learning</span>
+      <span class="skill-hover bg-yellow-500 text-black px-5 py-2 rounded-full font-medium cursor-pointer">NLP</span>
+      <span class="skill-hover bg-yellow-600 text-black px-5 py-2 rounded-full font-medium cursor-pointer">AI</span>
+      <span class="skill-hover bg-yellow-700 text-yellow-50 px-5 py-2 rounded-full font-medium cursor-pointer">LangChain</span>
+      <span class="skill-hover bg-yellow-800 text-yellow-50 px-5 py-2 rounded-full font-medium cursor-pointer">Transformers</span>
+      <span class="skill-hover bg-gray-700 text-yellow-100 px-5 py-2 rounded-full font-medium cursor-pointer">Software Engineering</span>
+      <span class="skill-hover bg-gray-600 text-yellow-100 px-5 py-2 rounded-full font-medium cursor-pointer">Tableau</span>
+      <span class="skill-hover bg-white text-black px-5 py-2 rounded-full font-medium cursor-pointer">Power BI</span>
+      <span class="skill-hover bg-yellow-200 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Excel</span>
+      <span class="skill-hover bg-yellow-300 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Hugging Face</span>
+    </div>
   </section>
 
-  <!-- Projects Section - consistent background and animated text reveal -->
-<section class="py-24 px-4 sm:px-8 text-center">
-  <h2 class="text-4xl font-bold mb-16 text-yellow-400" data-aos="fade-down">My Projects</h2>
-  <div class="flex flex-col gap-12 max-w-3xl mx-auto">
+  <!-- Projects Section -->
+  <section class="py-12 sm:py-24 px-2 sm:px-8 text-center">
+    <h2 class="text-4xl font-bold mb-12 sm:mb-16 text-yellow-400" data-aos="fade-down">My Projects</h2>
+    <div class="flex flex-col gap-8 sm:gap-12 w-full max-w-3xl mx-auto">
 
-    <div class="border-l-4 border-yellow-400 pl-4 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="140">
-  <h3 class="text-2xl font-semibold text-yellow-300 mb-2">Personal Chatbot</h3>
-  <img src="assets/chatbot.webp" alt="Personal Chatbot Screenshot" class="project-img w-full h-auto rounded-lg shadow-lg" />
-  <ul class="list-disc list-inside text-yellow-100 text-base space-y-1">
-    <li>Developed a personalized chatbot using FAISS (Facebook AI Similarity Search) and the SentenceTransformer library.</li>
-    <li>Created a JSON file containing personal Q&A data as prompt-response pairs.</li>
-    <li>Used SentenceTransformer (all-MiniLM-L6-v2) to convert both user queries and stored prompts into vector embeddings.</li>
-    <li>Built a FAISS index to store these vector embeddings for efficient similarity search.</li>
-    <li>When a user asks a question, the chatbot converts the query into an embedding, performs a nearest neighbor search in the FAISS index using Euclidean distance, and retrieves the most relevant response.</li>
-    <li>Used Streamlit to build a clean and interactive frontend interface where users can chat with the bot.</li>
-  </ul>
-  <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-2">
-    <a href="https://github.com/gurleenkaurbali19/gurleen_chatbot" class="glow-button text-base" target="_blank" data-aos="zoom-in" data-aos-delay="170">GitHub</a>
-    <a href="https://gurleenchatbot.streamlit.app/" class="glow-button text-base" target="_blank" data-aos="zoom-in" data-aos-delay="210">Live Demo</a>
-  </div>
-</div>
+      <!-- Project 1 Example Responsive -->
+      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="140">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-2">Personal Chatbot</h3>
+        <img src="assets/chatbot.webp" alt="Personal Chatbot Screenshot" class="project-img" />
+        <ul class="list-disc list-inside text-yellow-100 text-base space-y-1">
+          <li>Developed a personalized chatbot using FAISS and SentenceTransformer library.</li>
+          <li>Created a JSON with personal Q&A as prompt-response pairs.</li>
+          <li>Used SentenceTransformer (all-MiniLM-L6-v2) to convert queries/prompts to vector embeddings.</li>
+          <li>Built a FAISS index for efficient similarity search using Euclidean distance.</li>
+          <li>Streamlit frontend for chat interface.</li>
+        </ul>
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-2">
+          <a href="https://github.com/gurleenkaurbali19/gurleen_chatbot" class="glow-button text-base" target="_blank" data-aos="zoom-in" data-aos-delay="170">GitHub</a>
+          <a href="https://gurleenchatbot.streamlit.app/" class="glow-button text-base" target="_blank" data-aos="zoom-in" data-aos-delay="210">Live Demo</a>
+        </div>
+      </div>
 
+      <!-- Article Summarizer -->
+      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="80">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Article Summarizer</h3>
+        <p class="text-base text-yellow-100 leading-relaxed">
+          Engineered a Seq2Seq model with encoder-decoder LSTM to summarize 4,500+ news articles. Leveraged Python, Hugging Face Transformers, and Google Colab.
+        </p>
+        <a href="https://github.com/gurleenkaurbali19/article_summarization" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="170">GitHub</a>
+      </div>
 
-    <!-- Article Summarizer -->
-    <div class="border-l-4 border-yellow-400 pl-4 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="80">
-  <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Article Summarizer</h3>
-  <p class="text-base text-yellow-100 leading-relaxed">
-    Engineered a Seq2Seq model with an encoder-decoder LSTM architecture to automatically summarize over 4,500 news articles, enhancing content comprehension by capturing the core information. Processed a rich dataset containing metadata such as authors, headlines, and full texts. Leveraged GPU acceleration on Google Colab for efficient model training and optimization. Key technologies included Python, NLP, Seq2Seq, Encoder-Decoder LSTM, Hugging Face Transformers, and Google Colab.
-  </p>
-  <a href="https://github.com/gurleenkaurbali19/article_summarization" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="170">GitHub</a>
-</div>
+      <!-- Sales Dashboard with image and Responsive bullet points -->
+      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-left" data-aos-delay="120">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Sales Dashboard</h3>
+        <img src="assets/dashboard.webp" alt="Sales Dashboard Screenshot" class="project-img" />
+        <p class="text-base text-yellow-100">
+          Interactive Tableau dashboard for actionable sales insights.
+        </p>
+        <ul class="list-disc list-inside text-yellow-100 space-y-1">
+          <li>Connected, cleaned, and standardized sales data.</li>
+          <li>Revenue analysis and trend visualizations (by market, customer, product).</li>
+          <li>User-friendly dashboard for data-driven decisions.</li>
+        </ul>
+        <p class="text-base text-yellow-100 mt-2"><strong>Technologies:</strong> Tableau, Data Cleaning, SQL</p>
+        <a href="https://public.tableau.com/app/profile/gurleen.kaur.bali/viz/sales_insights_17286399081960/SalesDashboard" class="glow-button mt-4 inline-block" target="_blank" data-aos="zoom-in" data-aos-delay="170">Dashboard</a>
+      </div>
 
+      <!-- Customer Sentiment Analysis -->
+      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="220">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Customer Sentiment and Feedback Analysis</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-full mx-auto">
+          <img src="assets/sentiment1.webp" alt="Customer Sentiment 1" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
+          <img src="assets/sentiment2.webp" alt="Customer Sentiment 2" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
+        </div>
+        <p class="text-base text-yellow-100 mb-2">
+          LSTM-based sentiment system classifying feedback: Positive/Negative/Neutral.
+        </p>
+        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
+          <li>Used Hugging Face dataset, strong data preprocessing, and LSTM deep-learning model.</li>
+          <li>Combined sentiment scores and strong word analysis for accurate ratings.</li>
+        </ul>
+        <p class="text-base text-yellow-100 mt-2"><strong>Tech:</strong> Python, LSTM, Hugging Face NLP</p>
+      </div>
 
-    <!-- Sales Dashboard with Image & bullet points -->
-    <div class="border-l-4 border-yellow-400 pl-8 text-left" data-aos="fade-left" data-aos-delay="120">
-  <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Sales Dashboard</h3>
-  <img src="assets/dashboard.webp" alt="Sales Dashboard Screenshot" class="project-img" />
-  <p class="text-base text-yellow-100">
-    Designed and developed an interactive Tableau dashboard that delivers actionable sales insights for a hardware product company, driving strategic planning.
-  </p>
-  <ul class="list-disc list-inside text-yellow-100 space-y-1">
-    <li>Connected to a sales transaction database and performed data cleaning, including handling negative sales and standardizing revenue in INR.</li>
-    <li>Created calculated fields to convert and standardize revenue figures for accurate analysis.</li>
-    <li>Developed visualizations showing sales quantity by market, top 5 products, top 5 customers, and revenue trends by year and market segment.</li>
-    <li>Delivered a dynamic, user-friendly dashboard facilitating data-driven business decisions and growth strategies.</li>
-  </ul>
-  <p class="text-base text-yellow-100 mt-2"><strong>Technologies:</strong> Tableau, Data Cleaning, Data Visualization, SQL.</p>
-  <a href="https://public.tableau.com/app/profile/gurleen.kaur.bali/viz/sales_insights_17286399081960/SalesDashboard" class="glow-button mt-4 inline-block" target="_blank" data-aos="zoom-in" data-aos-delay="170">Dashboard</a>
-</div>
+      <!-- Translator -->
+      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-left" data-aos-delay="160">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">English-Turkish Translator</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-full mx-auto">
+          <img src="assets/translator.webp" alt="Translator app" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
+        </div>
+        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
+          <li>AI-powered web app using Hugging Face M2M100 model.</li>
+          <li>Text/file translation, Django backend, real-time UI.</li>
+        </ul>
+        <p class="text-base text-yellow-100 mt-2"><strong>Tech:</strong> Python, Django, Hugging Face</p>
+        <a href="https://github.com/gurleenkaurbali19/text_translation_english_to_turkish" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="190">GitHub</a>
+      </div>
 
+      <!-- Image Classification -->
+      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="180">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Image Classification</h3>
+        <p class="text-base text-yellow-100 mb-2 leading-relaxed">
+          Multi-class classifier for athlete images using advanced ML and Haar Cascades.
+        </p>
+        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
+          <li>Face detection, tuned hyperparameters, improved accuracy.</li>
+        </ul>
+        <a href="https://github.com/gurleenkaurbali19/Image-Classification-model" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="210">GitHub</a>
+      </div>
 
-    <!-- Customer Sentiment and Feedback Analysis with Images and bullet points -->
-    <div class="border-l-4 border-yellow-400 pl-4 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="220">
-  <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Customer Sentiment and Feedback Analysis</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-4xl mx-auto">
-    <img src="assets/sentiment1.webp" alt="Customer Sentiment Analysis Screenshot 1"
-         class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-    <img src="assets/sentiment2.webp" alt="Customer Sentiment Analysis Screenshot 2"
-         class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-  </div>
-  <p class="text-base text-yellow-100 mb-2">
-    Developed a deep learning-based sentiment analysis system using LSTM to classify customer feedback as Positive, Negative, or Neutral.
-  </p>
-  <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base sm:text-base">
-    <li>Utilized the <em>Sp1786/multiclass-sentiment-analysis-dataset</em> from Hugging Face with extensive data preprocessing: lowercasing, punctuation and number removal, stopword removal, lemmatization, and negation handling.</li>
-    <li>Designed and trained an LSTM model consisting of an Embedding layer and two LSTM layers (128 and 64 units) with dropout layers (0.3) to improve robustness.</li>
-    <li>Implemented a rating assignment system combining sentiment prediction with strong opinion word analysis for better rating accuracy.</li>
-  </ul>
-  <p class="text-base text-yellow-100 mt-2"><strong>Technologies:</strong> Python, LSTM, Deep Learning, NLP, Hugging Face, Data Preprocessing</p>
-</div>
+      <!-- Diabetes Prediction Model -->
+      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="240">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Diabetes Prediction Model</h3>
+        <p class="text-base text-yellow-100 mb-2">
+          Supervised learning model for diabetes risk using patient demographics.
+        </p>
+        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
+          <li>Compared Random Forest, SVM, and Decision Trees; Tkinter GUI.</li>
+        </ul>
+        <p class="text-base text-yellow-100 mt-2"><strong>Tech:</strong> Python, ML, Tkinter</p>
+      </div>
 
+      <!-- Django MVC Website -->
+      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-left" data-aos-delay="200">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Django MVC Website</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-full mx-auto">
+          <img src="assets/django1.webp" alt="Django MVC Website 1" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
+          <img src="assets/django2.webp" alt="Django MVC Website 2" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
+        </div>
+        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
+          <li>Robust Django web app; efficient URL routing; user-friendly forms; solid grasp of MVC backend.</li>
+        </ul>
+        <a href="https://github.com/gurleenkaurbali19/Python-django-orientations" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="230">GitHub</a>
+      </div>
 
-    <!-- English-Turkish Translator with Image and bullet points -->
-    <div class="border-l-4 border-yellow-400 pl-4 sm:pl-8 text-left" data-aos="fade-left" data-aos-delay="160">
-  <h3 class="text-2xl font-semibold text-yellow-300 mb-1">English-Turkish Translator</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-4xl mx-auto">
-    <img src="assets/translator.webp" alt="Translator app" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-  </div>
-  <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
-    <li>Developed an AI-powered English-to-Turkish translation web application using Hugging Face’s M2M100 model.</li>
-    <li>Implemented text and text file translation, with dynamic UI enhancements using Django.</li>
-    <li>Integrated evaluation metrics (Perplexity, Readability, Semantic Similarity) and a loading animation for better user experience.</li>
-    <li>Designed a responsive and visually appealing interface with real-time translation updates.</li>
-  </ul>
-  <p class="text-base text-yellow-100 mt-2"><strong>Technologies:</strong> Python, Django, Hugging Face</p>
-  <a href="https://github.com/gurleenkaurbali19/text_translation_english_to_turkish" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="190">GitHub</a>
-</div>
-
-
-    <!-- Image Classification with bullet points -->
-    <div class="border-l-4 border-yellow-400 pl-4 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="180">
-  <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Image Classification</h3>
-  <p class="text-base text-yellow-100 mb-2 leading-relaxed">
-    Developed a multi-class classification model to categorize images of athletes into five distinct categories, employing advanced machine learning techniques to ensure precise and reliable predictions.
-  </p>
-  <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
-    <li>Implemented face detection using Haar Cascades to isolate relevant features, enhancing model accuracy.</li>
-    <li>Conducted hyperparameter tuning to optimize model performance, significantly improving classification accuracy and efficiency.</li>
-    <li><strong>Technologies Used:</strong> Python, Machine Learning, Haar Cascades, Hyperparameter Tuning, Image Processing</li>
-  </ul>
-  <a href="https://github.com/gurleenkaurbali19/Image-Classification-model" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="210">GitHub</a>
-</div>
-
-
-    <!-- Diabetes Prediction Model with 2 images and bullet points -->
-    <div class="border-l-4 border-yellow-400 pl-4 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="240">
-  <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Diabetes Prediction Model</h3>
-  <p class="text-base text-yellow-100 mb-2">
-    Built a robust supervised learning model to predict the likelihood of diabetes onset, utilizing patient demographics and medical history for precise risk predictions and early diagnosis.
-  </p>
-  <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
-    <li>Implemented and compared multiple classification algorithms including Random Forest, Support Vector Machine (SVM), and Decision Trees to identify the most effective model.</li>
-    <li>Developed an intuitive graphical interface using Tkinter, streamlining user interaction for effortless input and prediction visualization.</li>
-    <li>Conducted an in-depth evaluation of algorithmic performance, analyzing strengths and weaknesses in predicting health risks.</li>
-  </ul>
-  <p class="text-base text-yellow-100 mt-2"><strong>Technologies:</strong> Python, Machine Learning, Tkinter, Random Forest, SVM, Decision Trees</p>
-</div>
-
-
-   <div class="border-l-4 border-yellow-400 pl-4 sm:pl-8 text-left" data-aos="fade-left" data-aos-delay="200">
-  <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Django MVC Website</h3>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-4xl mx-auto">
-    <img src="assets/django1.webp" alt="Django MVC Website Screenshot 1" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-    <img src="assets/django2.webp" alt="Django MVC Website Screenshot 2" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-  </div>
-  <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base sm:text-base">
-    <li>Developed a robust web application using Django, optimizing backend management and user experience.</li>
-    <li>Implemented efficient URL routing for seamless navigation and designed a user-friendly "Contact Us" form to enhance user interaction. Gained a strong understanding of Django’s MVC architecture for better backend organization.</li>
-  </ul>
-  <a href="https://github.com/gurleenkaurbali19/Python-django-orientations" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="230">GitHub</a>
-</div>
-
-</section>
-
-
- <!-- Certifications -->
-<section class="py-24 px-4 sm:px-8 text-center">
-  <h2 class="text-4xl font-bold mb-14 text-yellow-400" data-aos="fade-up">Certifications</h2>
-  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
-    
-    <!-- 1 -->
-    <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-right">
-      <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">Career Essentials in Generative AI</h3>
-      <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> Microsoft & LinkedIn</div>
-      <div class="text-yellow-50 text-xs mb-2">Topics: Generative AI, Machine Learning, Microsoft Copilot</div>
-      <a href="https://www.linkedin.com/learning/certificates/28aced1c361ed602d00ad4b7695bacdbd1fdf00113446822b86ac204823636b3?trk=share_certificate" target="_blank" class="text-sm text-yellow-400 underline">View Certificate</a>
     </div>
+  </section>
 
-    <!-- 2 -->
-    <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-left">
-      <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">British Airways - Data Science Job Simulation</h3>
-      <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> Forage</div>
-      <div class="text-yellow-50 text-xs mb-2">Topics: Data Science, Customer Feedback Analysis, Real-World Applications</div>
-      <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_Y5ErnN5yX49EuihXt_1737121106111_completion_certificate.pdf" target="_blank" class="text-sm text-yellow-400 underline">View Certificate</a>
+  <!-- Certifications -->
+  <section class="py-12 sm:py-24 px-2 sm:px-8 text-center">
+    <h2 class="text-4xl font-bold mb-10 sm:mb-14 text-yellow-400" data-aos="fade-up">Certifications</h2>
+    <div class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 text-left">
+      <!-- Cert 1 -->
+      <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-right">
+        <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">Career Essentials in Generative AI</h3>
+        <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> Microsoft & LinkedIn</div>
+        <div class="text-yellow-50 text-xs mb-2">Generative AI, ML, Copilot</div>
+        <a href="https://www.linkedin.com/learning/certificates/28aced1c361ed602d00ad4b7695bacdbd1fdf00113446822b86ac204823636b3?trk=share_certificate" target="_blank" class="text-sm text-yellow-400 underline">View</a>
+      </div>
+      <!-- Cert 2 -->
+      <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-left">
+        <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">British Airways - Data Science Simulation</h3>
+        <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> Forage</div>
+        <div class="text-yellow-50 text-xs mb-2">Data Science, Customer Feedback</div>
+        <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/tMjbs76F526fF5v3G/NjynCWzGSaWXQCxSX_tMjbs76F526fF5v3G_Y5ErnN5yX49EuihXt_1737121106111_completion_certificate.pdf" target="_blank" class="text-sm text-yellow-400 underline">View</a>
+      </div>
+      <!-- Cert 3 -->
+      <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-right">
+        <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">J.P. Morgan - Software Engineering Simulation</h3>
+        <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> Forage</div>
+        <div class="text-yellow-50 text-xs mb-2">Software Engineering, Real-World</div>
+        <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_Y5ErnN5yX49EuihXt_1720503169313_completion_certificate.pdf" target="_blank" class="text-sm text-yellow-400 underline">View</a>
+      </div>
+      <!-- Cert 4 -->
+      <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-left">
+        <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">Generative AI Introduction & Apps</h3>
+        <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> IBM</div>
+        <div class="text-yellow-50 text-xs mb-2">GenAI, Use Cases</div>
+        <a href="https://www.coursera.org/account/accomplishments/verify/TBF579GVMZW9" target="_blank" class="text-sm text-yellow-400 underline">View</a>
+      </div>
+      <!-- Cert 5 -->
+      <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-right">
+        <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">Python for Machine Learning</h3>
+        <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> Great Learning</div>
+        <div class="text-yellow-50 text-xs mb-2">Python, ML Algorithms</div>
+        <a href="https://www.mygreatlearning.com/certificate/CPOEMOBN" target="_blank" class="text-sm text-yellow-400 underline">View</a>
+      </div>
+      <!-- Cert 6 -->
+      <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-left">
+        <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">Intro to AWS Cloud Careers</h3>
+        <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> AWS</div>
+        <div class="text-yellow-50 text-xs mb-2">Cloud Fundaments, Careers</div>
+        <a href="https://www.coursera.org/account/accomplishments/certificate/QLQWV6WXSB8Q" target="_blank" class="text-sm text-yellow-400 underline">View</a>
+      </div>
     </div>
-
-    <!-- 3 -->
-    <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-right">
-      <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">J.P. Morgan - Software Engineering Job Simulation</h3>
-      <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> Forage</div>
-      <div class="text-yellow-50 text-xs mb-2">Topics: Software Engineering, Problem Solving, Real-World Scenarios</div>
-      <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/J.P.%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan_Y5ErnN5yX49EuihXt_1720503169313_completion_certificate.pdf" target="_blank" class="text-sm text-yellow-400 underline">View Certificate</a>
-    </div>
-    
-    <!-- 4 -->
-   <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-left">
-     <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">Generative AI Introduction and Applications</h3>
-      <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> IBM</div>
-      <div class="text-yellow-50 text-xs mb-2">Topics: Generative AI Concepts, Use Cases, Applications</div>
-      <a href="https://www.coursera.org/account/accomplishments/verify/TBF579GVMZW9" target="_blank" class="text-sm text-yellow-400 underline">View Certificate</a>
-    </div>
-
-    <!-- 5 -->
-    <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-right">
-      <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">Python for Machine Learning</h3>
-      <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> Great Learning</div>
-      <div class="text-yellow-50 text-xs mb-2">Topics: Python Basics, Machine Learning Algorithms, Applications</div>
-      <a href="https://www.mygreatlearning.com/certificate/CPOEMOBN" target="_blank" class="text-sm text-yellow-400 underline">View Certificate</a>
-    </div>
-    
-    <!-- 6 -->
-    <div class="p-4 sm:p-8 rounded-2xl border border-yellow-800 bg-black/80 transition-transform duration-200 hover:scale-105 hover:shadow-2xl hover:border-yellow-400" data-aos="fade-left">
-   <h3 class="text-base sm:text-lg font-semibold text-yellow-300 mb-2">Introduction to AWS Cloud Careers</h3>
-      <div class="text-yellow-200 text-sm mb-1"><strong>Issued by:</strong> AWS</div>
-      <div class="text-yellow-50 text-xs mb-2">Topics: Cloud Computing Fundamentals, Career Pathways in Cloud</div>
-      <a href="https://www.coursera.org/account/accomplishments/certificate/QLQWV6WXSB8Q" target="_blank" class="text-sm text-yellow-400 underline">View Certificate</a>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 
   <!-- Training & Experience -->
- <section class="py-24 px-4 sm:px-8 text-center">
-  <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-yellow-400" data-aos="fade-up">Training & Experience</h2>
-  <div class="max-w-3xl mx-auto text-left bg-black/80 p-6 sm:p-10 rounded-2xl border border-yellow-800 space-y-4" data-aos="fade-up">
-    <h3 class="text-lg font-semibold text-yellow-300">Data Science Trainee — Shape MySkills</h3>
-    <p class="text-sm text-yellow-200 mb-1">July – August 2024</p>
-    <p class="text-yellow-100 text-base">Worked on ML classification tasks, logistic regression, and deployed a diabetes prediction app using Streamlit.</p>
+  <section class="py-12 sm:py-24 px-2 sm:px-8 text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-10 sm:mb-12 text-yellow-400" data-aos="fade-up">Training & Experience</h2>
+    <div class="w-full max-w-3xl mx-auto text-left bg-black/80 p-4 sm:p-10 rounded-2xl border border-yellow-800" data-aos="fade-up">
+      <h3 class="text-lg font-semibold text-yellow-300">Data Science Trainee — Shape MySkills</h3>
+      <p class="text-sm text-yellow-200 mb-1">July – August 2024</p>
+      <p class="text-yellow-100 text-base">Worked on ML classification tasks, logistic regression, deployed a diabetes prediction app using Streamlit.</p>
+    </div>
+  </section>
+
+  <div class="w-full flex flex-col sm:flex-row justify-center my-8 sm:my-12 px-2 gap-4">
+    <a href="assets/gurleen_kaur_bali_resume.pdf" class="glow-button text-lg" target="_blank" rel="noopener" data-aos="zoom-in">
+      📄 My Resume
+    </a>
   </div>
-</section>
 
-
- <div class="w-full flex flex-col sm:flex-row justify-center my-12 px-4 gap-4">
-  <a href="assets/gurleen_kaur_bali_resume.pdf" class="glow-button text-lg" target="_blank" rel="noopener" data-aos="zoom-in">
-    📄 My Resume
-  </a>
-</div>
-
-
-
- <footer class="mt-20 py-8 px-4 text-center max-w-4xl mx-auto">
-  <p class="text-lg text-yellow-400 italic font-semibold" data-aos="fade-up">
-    Looking forward to new challenges and opportunities in AI, Machine Learning, and Data Science.
-  </p>
-</footer>
+  <footer class="mt-12 sm:mt-20 py-6 sm:py-8 px-2 sm:px-4 text-center w-full max-w-4xl mx-auto">
+    <p class="text-lg text-yellow-400 italic font-semibold" data-aos="fade-up">
+      Looking forward to new challenges and opportunities in AI, Machine Learning, and Data Science.
+    </p>
+  </footer>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });</script>
+  <script>
+    AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+  </script>
 </body>
 </html>
