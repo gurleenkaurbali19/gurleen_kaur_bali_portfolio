@@ -21,9 +21,9 @@
     /* Typing Effect */
     .typing {
       overflow: hidden;
-      border-right: 2px solid #facc15;
+      border-right: 2px solid #ffcc00;
       white-space: nowrap;
-      animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+      animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
     }
     @keyframes typing { from { width: 0; } to { width: 100%; } }
     @keyframes blink-caret { 50% { border-color: transparent; } }
@@ -34,7 +34,7 @@
       font-weight: 600;
       padding: 0.8rem 2.2rem;
       border-radius: 9999px;
-      box-shadow: 0 0 18px #facc15;
+      box-shadow: 0 0 18px #d9dc16;
       transition: all 0.3s cubic-bezier(.4,0,.2,1);
     }
     .glow-button:hover {
@@ -44,7 +44,7 @@
 
     body {
       position: relative;
-      background: #080808;
+      background: #000000;
       min-height: 100vh;
       overflow-x: hidden !important;
     }
@@ -65,12 +65,12 @@
     }
 
     .skill-hover {
-      transition: transform 0.15s cubic-bezier(.4,0,.2,1), box-shadow 0.15s cubic-bezier(.4,0,.2,1), background 0.15s cubic-bezier(.4,0,.2,1);
+      transition: transform 0.10s cubic-bezier(.4,0,.2,1), box-shadow 0.15s cubic-bezier(.4,0,.2,1), background 0.15s cubic-bezier(.4,0,.2,1);
     }
     .skill-hover:hover {
       transform: scale(1.12);
       box-shadow: 0 8px 28px -10px #facc15, 0 2px 8px -2px #ffe066;
-      background: #ffd700;
+      background: #e7f700;
       color: #000;
       z-index: 1;
     }
@@ -146,26 +146,20 @@
       Hi, I’m Gurleen Kaur Bali 👋
     </h1>
     <p class="text-lg sm:text-xl max-w-2xl mb-8 text-yellow-100" data-aos="fade-up" data-aos-delay="100">
-      A passionate Data Analyst, AI Explorer, and Developer with a creative mind and a love for building impactful projects.
-    </p>
+     A tech enthusiast who loves blending Artificial Intelligence, Generative AI, and Full Stack Development to bring ideas to life, certified as an OCI Generative AI Professional (Oracle). 
     <div class="flex flex-col sm:flex-row gap-4 sm:gap-6" data-aos="zoom-in" data-aos-delay="260">
       <a href="mailto:gurleenkaurbali20@gmail.com" class="glow-button">📧 Email</a>
       <a href="https://www.linkedin.com/in/gurleen-kaur-bali-4b24b1252/" target="_blank" class="glow-button">🔗 LinkedIn</a>
       <a href="https://github.com/gurleenkaurbali19" target="_blank" class="glow-button">💻 GitHub</a>
     </div>
-  </section>
+  
 
   <!-- About Me -->
   <section class="py-12 sm:py-24 px-2 sm:px-8 text-center">
-    <h2 class="text-4xl font-bold mb-8 text-yellow-400" data-aos="fade-up">About Me</h2>
-    <p class="max-w-3xl mx-auto text-xl mb-12 text-yellow-100" data-aos="fade-up" data-aos-delay="100">
-      I'm a passionate developer with hands-on experience in machine learning, web development, and natural language processing. I’m proficient with tools like Hugging Face, Tableau, and Django, and I've built smart chatbots, dashboards, and apps.
-    </p>
+  
     <h3 class="text-2xl font-semibold mb-6 text-yellow-200" data-aos="fade-right">Technical Skills</h3>
     <div class="flex flex-wrap justify-center gap-2 sm:gap-4 text-base max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="120">
       <span class="skill-hover bg-yellow-100 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Python</span>
-      <span class="skill-hover bg-yellow-200 text-black px-5 py-2 rounded-full font-medium cursor-pointer">C</span>
-      <span class="skill-hover bg-yellow-300 text-black px-5 py-2 rounded-full font-medium cursor-pointer">C++</span>
       <span class="skill-hover bg-yellow-400 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Machine Learning</span>
       <span class="skill-hover bg-yellow-500 text-black px-5 py-2 rounded-full font-medium cursor-pointer">NLP</span>
       <span class="skill-hover bg-yellow-600 text-black px-5 py-2 rounded-full font-medium cursor-pointer">AI</span>
@@ -176,118 +170,230 @@
       <span class="skill-hover bg-white text-black px-5 py-2 rounded-full font-medium cursor-pointer">Power BI</span>
       <span class="skill-hover bg-yellow-200 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Excel</span>
       <span class="skill-hover bg-yellow-300 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Hugging Face</span>
+      <span class="skill-hover bg-yellow-400 text-black px-5 py-2 rounded-full font-medium cursor-pointer">LLMs</span>
+    <span class="skill-hover bg-yellow-500 text-black px-5 py-2 rounded-full font-medium cursor-pointer">Prompt Engineering</span>
+    <span class="skill-hover bg-yellow-800 text-yellow-50 px-5 py-2 rounded-full font-medium cursor-pointer">OCI Generative AI Service</span>
+    <span class="skill-hover bg-gray-700 text-yellow-100 px-5 py-2 rounded-full font-medium cursor-pointer">RAG (Retrieval-Augmented Generation)</span>
+    <span class="skill-hover bg-gray-600 text-yellow-100 px-5 py-2 rounded-full font-medium cursor-pointer">LangChain + Oracle DB 23ai</span>
+   
+
     </div>
-  </section>
+  
 
   <!-- Projects Section -->
   <section class="py-12 sm:py-24 px-2 sm:px-8 text-center">
-    <h2 class="text-4xl font-bold mb-12 sm:mb-16 text-yellow-400" data-aos="fade-down">My Projects</h2>
-    <div class="flex flex-col gap-8 sm:gap-12 w-full max-w-3xl mx-auto">
+  <h2 class="text-4xl font-bold mb-12 sm:mb-16 text-yellow-400" data-aos="fade-down">
+    My Projects
+  </h2>
+  <div class="flex flex-col gap-8 sm:gap-12 w-full max-w-3xl mx-auto">
 
-      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="140">
-        <h3 class="text-2xl font-semibold text-yellow-300 mb-2">Personal Chatbot</h3>
-        <img src="assets/chatbot.webp" alt="Personal Chatbot Screenshot" class="project-img" />
-        <ul class="list-disc list-inside text-yellow-100 text-base space-y-1">
-          <li>Developed a personalized chatbot using FAISS and SentenceTransformer library.</li>
-          <li>Created a JSON with personal Q&A as prompt-response pairs.</li>
-          <li>Used SentenceTransformer (all-MiniLM-L6-v2) to convert queries/prompts to vector embeddings.</li>
-          <li>Built a FAISS index for efficient similarity search using Euclidean distance.</li>
-          <li>Streamlit frontend for chat interface.</li>
-        </ul>
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 mt-2">
-          <a href="https://github.com/gurleenkaurbali19/gurleen_chatbot" class="glow-button text-base" target="_blank" data-aos="zoom-in" data-aos-delay="170">GitHub</a>
-          <a href="https://gurleenchatbot.streamlit.app/" class="glow-button text-base" target="_blank" data-aos="zoom-in" data-aos-delay="210">Live Demo</a>
-        </div>
+    <!-- IPCheck Project -->
+    <div class="project-card bg-transparent text-white p-6 rounded-2xl shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4">🔍 IPCheck – Suspicious IP Tracker on World Map</h3>
+
+      <!-- Buttons -->
+      <div class="flex justify-center gap-4 mb-4 flex-wrap">
+        <a href="https://ipcheck-nine.vercel.app/" target="_blank"
+          class="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-300 transition">
+          🌐 Live Project
+        </a>
+        <a href="https://github.com/gurleenkaurbali19/-IPCheck" target="_blank"
+          class="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition">
+          💻 GitHub Repo
+        </a>
       </div>
 
-      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="80">
-        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Article Summarizer</h3>
-        <p class="text-base text-yellow-100 leading-relaxed">
-          Engineered a Seq2Seq model with encoder-decoder LSTM to summarize 4,500+ news articles. Leveraged Python, Hugging Face Transformers, and Google Colab.
+      <!-- GIF Preview -->
+      <img src="assets/ipcheck2.gif" alt="IPCheck Demo"
+        class="w-full rounded-xl shadow-lg mb-4">
+
+      <!-- Description -->
+      <p class="mb-3 text-gray-300">
+        <strong>Description:</strong>  
+        
+      <ul class="text-left text-white list-disc list-inside space-y-2 text-gray-300">
+        <li>⚡Built a <strong>FastAPI backend</strong> powered by a trained <strong>Random Forest ML model</strong> to predict IP risk levels.</li>
+        <li>🌍Designed a <strong>React frontend</strong> for CSV uploads, AI result visualization, and an <strong>interactive world map</strong> of flagged IPs.</li>
+        <li>🚀Deployed the backend on <strong>Render</strong> and frontend on <strong>Vercel</strong> with secure CORS handling & environment variable setup.</li>
+      </ul>
+      </p>
+    </div>
+
+  </div>
+
+<div class="flex flex-col gap-8 sm:gap-12 w-full max-w-3xl mx-auto">
+
+<!-- Personal Chatbot -->
+    <div class="project-card bg-transparent text-white p-6 rounded-2xl shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4">🤖 Personal Chatbot</h3>
+
+      <!-- Buttons -->
+      <div class="flex justify-center gap-4 mb-4 flex-wrap">
+        <a href="https://gurleenchatbot.streamlit.app/" target="_blank"
+          class="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-300 transition">
+          🌐 Live Project
+        </a>
+        <a href="https://github.com/gurleenkaurbali19/gurleen_chatbot" target="_blank"
+          class="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition">
+          💻 GitHub Repo
+        </a>
+      </div>
+
+      <!-- GIF Preview -->
+      <img src="assets/chatbot_gif.gif" alt="IPCheck Demo"
+        class="w-full rounded-xl shadow-lg mb-4">
+
+    
+    <!-- Description -->
+      <p class="mb-3 text-gray-300">
+        <strong>Description:</strong>  
+      <ul class="text-left text-white list-disc list-inside space-y-2 text-gray-300">
+    <li>⚡Developed with <strong>SentenceTransformer</strong> (all-MiniLM-L6-v2) embeddings + <strong>FAISS</strong> similarity      search.</li>
+    <li>📈Curated a <strong>JSON dataset</strong> of custom Q&A prompt–response pairs.</li>
+    <li>🔍Integrated an interactive <strong>Streamlit</strong> chat interface.</li>
+
+  </ul>
+  </p>
+
+    </div>
+
+  </div>
+      <div class="flex flex-col gap-8 sm:gap-12 w-full max-w-3xl mx-auto">
+
+<!-- Dashboard-->
+    <div class="project-card bg-transparent text-white p-6 rounded-2xl shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4">📊 Interactive Dashboard</h3>
+
+      <!-- Buttons -->
+      <div class="flex justify-center gap-4 mb-4 flex-wrap">
+        <a href="https://public.tableau.com/app/profile/gurleen.kaur.bali/viz/sales_insights_17286399081960/SalesDashboard" target="_blank"
+          class="px-4 py-2 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-yellow-300 transition">
+          🌐 Dashboard
+        </a>
+
+      <!-- GIF Preview -->
+      <img src="assets/dashboard_gif.gif" alt="Dashboard demo"
+        class="w-full rounded-xl shadow-lg mb-4">
+
+      <!-- Description -->
+      <p class="mb-3 text-gray-300">
+        <strong>Description:</strong>  
+      <ul class="text-left text-white list-disc list-inside space-y-2 text-gray-300">
+    <li>⚡ Connected, cleaned, and standardized sales data.</li>
+    <li>📈 Revenue analysis and trend visualizations (by market, customer, product).</li>
+    <li>🔍 User-friendly dashboard for data-driven decisions.</li>
+
+  </ul>
+    </div>
+
+  </div>
+
+  <div class="flex flex-col gap-8 sm:gap-12 w-full max-w-3xl mx-auto"></div>
+<!-- Sentiment app-->
+    <div class="project-card bg-transparent text-white p-6 rounded-2xl shadow-lg">
+      <h3 class="text-2xl font-semibold mb-4">💬 Sentiment Analysis</h3>
+
+    
+      <!-- GIF Preview -->
+      <img src="assets/sentiment_gif.gif" alt="Sentiment app demo"
+        class="w-full rounded-xl shadow-lg mb-4">
+
+      <!-- Description -->
+      <p class="mb-3 text-gray-300">
+        <strong>Description:</strong>  
+      <ul class="text-left text-white list-disc list-inside space-y-2 text-gray-300">
+   <li>🧠 Developed a NLP-based Sentiment Analysis model using <strong>Python</strong></li>
+    <li>📊 Used Hugging Face dataset, strong data preprocessing, and LSTM deep-learning model.</li>
+    <li>🌐 Processed datasets with <strong>Pandas</strong> & applied text preprocessing.</li>
+
+  </ul>
+    </div>
+
+  </div>
+
+
+
+
+<!-- Professional Certifications -->
+<section class="py-20 px-6 bg-black text-yellow-400">
+  <h2 class="text-4xl font-bold text-center mb-12">🌟 Professional Credential</h2>
+  <div class="max-w-5xl mx-auto grid grid-cols-1 gap-8">
+    <div class="bg-gray-900 shadow-lg rounded-2xl p-8 border border-yellow-400 flex flex-col sm:flex-row items-start justify-between gap-8" data-aos="fade-up">
+      
+      <!-- Left Side (Text Content) -->
+      <div class="flex-1 text-justify">
+        <h3 class="text-2xl font-semibold text-yellow-300 mb-2">OCI Generative AI Professional</h3>
+        <p class="text-sm text-gray-400 mb-4">Issued by Oracle</p>
+        <p class="text-yellow-100 text-base mb-4">
+          Credential demonstrating expertise in building and deploying Generative AI solutions on Oracle Cloud Infrastructure.
         </p>
-        <a href="https://github.com/gurleenkaurbali19/article_summarization" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="170">GitHub</a>
+
+        <p class="text-yellow-200 font-semibold mb-2">Along this journey, I deepened my understanding of:</p>
+        <ul class="list-disc list-inside space-y-2 text-yellow-100 text-base mb-6">
+          <li><strong>Large Language Models (LLMs):</strong> Fundamentals, architectures, prompt design, fine-tuning, code models, multi-modal models, and language agents.</li>
+          <li><strong>OCI Generative AI Service:</strong> Using pretrained foundational models (Chat & Embedding), creating dedicated AI clusters, fine-tuning with custom datasets, deploying endpoints, and exploring the security architecture.</li>
+          <li><strong>Retrieval-Augmented Generation (RAG):</strong> LangChain + Oracle Database 23ai integration, chunking & embedding documents, storing & indexing embeddings, similarity search, and response generation pipelines.</li>
+          <li><strong>OCI Generative AI RAG Agents:</strong> Creating knowledge bases, deploying RAG agents, and invoking them as chatbots.</li>
+        </ul>
+
+        <!-- Credential Link Button -->
+        <a href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=41EE8C7310CE83CB45B15DD543146F58A27CF7C9E5F935C2C3F7B70F62642D29" target="_blank" class="inline-block px-6 py-2 bg-yellow-500 text-black font-semibold rounded-full shadow hover:bg-yellow-400 transition">
+          🎓 View Credential
+        </a>
       </div>
 
-      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-left" data-aos-delay="120">
-        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Sales Dashboard</h3>
-        <img src="assets/dashboard.webp" alt="Sales Dashboard Screenshot" class="project-img" />
-        <p class="text-base text-yellow-100">
-          Interactive Tableau dashboard for actionable sales insights.
-        </p>
-        <ul class="list-disc list-inside text-yellow-100 space-y-1">
-          <li>Connected, cleaned, and standardized sales data.</li>
-          <li>Revenue analysis and trend visualizations (by market, customer, product).</li>
-          <li>User-friendly dashboard for data-driven decisions.</li>
-        </ul>
-        <p class="text-base text-yellow-100 mt-2"><strong>Technologies:</strong> Tableau, Data Cleaning, SQL</p>
-        <a href="https://public.tableau.com/app/profile/gurleen.kaur.bali/viz/sales_insights_17286399081960/SalesDashboard" class="glow-button mt-4 inline-block" target="_blank" data-aos="zoom-in" data-aos-delay="170">Dashboard</a>
-      </div>
-
-      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="220">
-        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Customer Sentiment and Feedback Analysis</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-full mx-auto">
-          <img src="assets/sentiment1.webp" alt="Customer Sentiment 1" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-          <img src="assets/sentiment2.webp" alt="Customer Sentiment 2" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-        </div>
-        <p class="text-base text-yellow-100 mb-2">
-          LSTM-based sentiment system classifying feedback: Positive/Negative/Neutral.
-        </p>
-        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
-          <li>Used Hugging Face dataset, strong data preprocessing, and LSTM deep-learning model.</li>
-          <li>Combined sentiment scores and strong word analysis for accurate ratings.</li>
-        </ul>
-        <p class="text-base text-yellow-100 mt-2"><strong>Tech:</strong> Python, LSTM, Hugging Face NLP</p>
-      </div>
-
-      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-left" data-aos-delay="160">
-        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">English-Turkish Translator</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-full mx-auto">
-          <img src="assets/translator.webp" alt="Translator app" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-        </div>
-        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
-          <li>AI-powered web app using Hugging Face M2M100 model.</li>
-          <li>Text/file translation, Django backend, real-time UI.</li>
-        </ul>
-        <p class="text-base text-yellow-100 mt-2"><strong>Tech:</strong> Python, Django, Hugging Face</p>
-        <a href="https://github.com/gurleenkaurbali19/text_translation_english_to_turkish" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="190">GitHub</a>
-      </div>
-
-      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="180">
-        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Image Classification</h3>
-        <p class="text-base text-yellow-100 mb-2 leading-relaxed">
-          Multi-class classifier for athlete images using advanced ML and Haar Cascades.
-        </p>
-        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
-          <li>Face detection, tuned hyperparameters, improved accuracy.</li>
-        </ul>
-        <a href="https://github.com/gurleenkaurbali19/Image-Classification-model" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="210">GitHub</a>
-      </div>
-
-      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-right" data-aos-delay="240">
-        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Diabetes Prediction Model</h3>
-        <p class="text-base text-yellow-100 mb-2">
-          Supervised learning model for diabetes risk using patient demographics.
-        </p>
-        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
-          <li>Compared Random Forest, SVM, and Decision Trees; Tkinter GUI.</li>
-        </ul>
-        <p class="text-base text-yellow-100 mt-2"><strong>Tech:</strong> Python, ML, Tkinter</p>
-      </div>
-
-      <div class="border-l-4 border-yellow-400 pl-3 sm:pl-8 text-left" data-aos="fade-left" data-aos-delay="200">
-        <h3 class="text-2xl font-semibold text-yellow-300 mb-1">Django MVC Website</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 max-w-full mx-auto">
-          <img src="assets/django1.webp" alt="Django MVC Website 1" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-          <img src="assets/django2.webp" alt="Django MVC Website 2" class="w-full h-auto max-h-48 object-cover rounded-lg shadow-lg" />
-        </div>
-        <ul class="list-disc list-inside text-yellow-100 space-y-1 text-base">
-          <li>Robust Django web app; efficient URL routing; user-friendly forms; solid grasp of MVC backend.</li>
-        </ul>
-        <a href="https://github.com/gurleenkaurbali19/Python-django-orientations" class="glow-button mt-4 inline-block text-base" target="_blank" data-aos="zoom-in" data-aos-delay="230">GitHub</a>
+      <!-- Right Side (Badge Image) -->
+      <div class="flex-shrink-0 self-center sm:self-start">
+        <img src="assets/oci_genai_badge.png" alt="OCI GenAI Professional" class="w-32 sm:w-40 rounded-lg shadow-md">
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
+
+<section class="py-12 bg-black text-yellow-100">
+  <h2 class="text-3xl font-bold text-center text-yellow-300 mb-10">⚡ Other Projects</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+
+    
+    <!-- Diabetes Prediction -->
+    <div class="bg-zinc-900 p-6 rounded-2xl shadow-md text-center border border-yellow-400" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-xl font-semibold text-yellow-300 mb-3">🩺 Diabetes Prediction</h3>
+      <p class="text-base mb-4">
+        Machine learning model that predicts the <strong>likelihood of diabetes</strong> based on medical input features.
+      </p>
+  
+    </div>
+    <!-- Article -->
+    <div class="bg-zinc-900 p-6 rounded-2xl shadow-md text-center border border-yellow-400" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-xl font-semibold text-yellow-300 mb-3">💬 Article Summarizer model</h3>
+      <p class="text-base mb-4">
+        This project implements an abstractive text summarization system using a Sequence-to-Sequence (Seq2Seq) model with LSTM-based encoder-decoder architecture. 
+      </p>
+          <a href="https://github.com/gurleenkaurbali19/article_summarization" 
+         class="glow-button text-base inline-block mt-2" 
+         target="_blank">GitHub</a>
+    
+    </div>
+
+
+    <!-- Image Classification -->
+    <div class="bg-zinc-900 p-6 rounded-2xl shadow-md text-center border border-yellow-400" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-xl font-semibold text-yellow-300 mb-3">🖼️ Image Classification</h3>
+      <p class="text-base mb-4">
+        Deep learning project that classifies images into categories using a <strong>CNN architecture</strong>.
+      </p>
+      <a href="https://github.com/gurleenkaurbali19/Image-Classification-model" 
+         class="glow-button text-base inline-block mt-2" 
+         target="_blank">GitHub</a>
+    </div>
+
+  </div>
+</section>
+</section>
+
+
+
 
   <!-- Certifications -->
   <section class="py-12 sm:py-24 px-2 sm:px-8 text-center">
