@@ -100,7 +100,7 @@ nav a:hover{background:var(--soft);color:var(--teal-d);transform:translateY(-2px
 .chips li:nth-child(even){--rot:4deg}
 
 /* 4 projects */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .45s var(--spring),box-shadow .3s}
 .card:hover{transform:translateY(-10px) rotate(-1deg);box-shadow:0 26px 40px -22px rgba(14,143,138,.5)}
 .card h3{font-size:24px;padding:22px 22px 14px}
@@ -285,6 +285,11 @@ h2:hover::after{width:240px}
 .card:nth-child(2) .tech{color:#D4503F}.card:nth-child(3) .tech{color:#5B4BD6}
 .card:nth-child(2) .links a{border-color:var(--coral);color:#D4503F}.card:nth-child(2) .links a:hover{background:var(--coral);color:#fff}
 .card:nth-child(3) .links a{border-color:var(--violet);color:#5B4BD6}.card:nth-child(3) .links a:hover{background:var(--violet);color:#fff}
+.card:nth-child(4){border-top-color:var(--pop)}
+.card:nth-child(4) .gif{background:#FFF0C9}
+.card:nth-child(4) .tech{color:#8A5A00}
+.card:nth-child(4) .links a{border-color:var(--pop);color:#8A5A00}
+.card:nth-child(4) .links a:hover{background:var(--pop);color:var(--ink)}
 .tl::before{background:linear-gradient(var(--teal),var(--pop),var(--coral),var(--violet))}
 .job{border-left:6px solid var(--teal)}
 .job:nth-child(2){border-left-color:var(--coral)}
@@ -390,6 +395,10 @@ h2:hover::after{width:240px}
       <div class="gif"><span>Demo preview</span><img src="assets/chatbot_gif.gif" alt="Chatbot demo" onerror="this.remove()"></div>
       <div class="body"><p>Answers questions about me using SentenceTransformer (all-MiniLM-L6-v2) embeddings and FAISS similarity search over a custom JSON dataset of Q&amp;A pairs, wrapped in an interactive Streamlit chat interface.</p><p class="tech">SentenceTransformers, FAISS, Streamlit</p>
       <div class="links"><a href="https://github.com/gurleenkaurbali19/gurleen_chatbot" target="_blank" rel="noopener">GitHub</a><a href="https://gurleenchatbot.streamlit.app/" target="_blank" rel="noopener">Live chatbot</a></div></div></article>
+    <article class="card rv"><h3>VisitToValue: E-Commerce Analytics</h3>
+      <div class="gif"><span>Demo preview</span><img src="assets/visittovalue.gif" alt="VisitToValue Power BI dashboard demo" onerror="this.remove()"></div>
+      <div class="body"><p>An end-to-end Power BI analytics solution: data imported and transformed with Power Query, a model of 6 related tables, and DAX measures for revenue, gross profit, conversion rate, refunds, units sold and margins. A 5-page interactive dashboard covers executive performance, marketing, website &amp; conversion, and product analytics, turning findings into actionable business insights and recommendations.</p><p class="tech">Power BI, Power Query, DAX, Data Modeling</p>
+      <div class="links"><a href="https://github.com/gurleenkaurbali19/VisitToValue-E-Commerce-Analytics" target="_blank" rel="noopener">GitHub</a></div></div></article>
   </div>
 </div></section>
 
